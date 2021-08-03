@@ -1,0 +1,66 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{ascmac}
+\usepackage{siunitx}
+\usepackage{otf}
+\pagestyle{plain}
+\usepackage{float}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{titlesec}
+\usepackage{amsmath,amssymb} %北野加筆
+\renewcommand{\bibname}{参考文献} %北野加筆
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage{url}
+\usepackage{comment}
+\usepackage{docmute}
+\setcounter{page}{0}
+\usepackage[table,xcdraw]{xcolor}
+\hypersetup{% hyperrefオプションリスト
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=blue,
+}
+\makeatletter
+	\renewcommand{\theequation}{% 式番号の付け方
+	\thesection.\arabic{equation}}
+	\@addtoreset{equation}{section}
+
+	\renewcommand{\thefigure}{% 図番号の付け方
+	\thesection.\arabic{figure}}
+	\@addtoreset{figure}{section}
+
+	\renewcommand{\thetable}{% 表番号の付け方
+	\thesection.\arabic{table}}
+	\@addtoreset{table}{section}
+\makeatother
+
+
+\begin{document}
+\input{title_index}
+\input{kitano/purpose}
+\input{kitano/cstheory}
+\input{kitano/radiustheory}
+\input{kitano/nonrelativity}
+\input{kitano/relativity}
+\input{kitano/energyloss}
+\input{MOYURU/accerlerator}
+\input{MOYURU/setup}
+\input{MOYURU/detection}
+\input{MOYURU/target}
+\input{kanezaki/daq}
+\input{kanezaki/calibration}
+\input{kanezaki/cross-section}
+\input{kousatu/masashi}
+\input{reference}
+\input{acknowledge}
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{otf}
+\usepackage[dvipdfmx]{graphicx}
+\pagestyle{plain}
+\usepackage{float}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\usepackage{url}
+\usepackage[table,xcdraw]{xcolor}
+\hypersetup{% hyperrefオプションリスト
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=blue,
+}
+
+\begin{document}
+\renewcommand\thefootnote{\arabic{footnote})}
+\subsection{用いる標的とエネルギー損失}
+\label{tarandloss}
+ラザフォードの散乱公式より、微分散乱断面積は標的の原子番号に依存することがわかる。今回の実験ではポリエチレン(PE)、金の2種類の標的を使用した。
+
+実験で用いる標的には厚さがあるため、入射陽子及び反跳粒子に対して標的内でのエネルギー損失を考える必要がある。そこで、本節では以下のBethe-Blochの式\eqref{eq:bethe}\cite{introto}を用いて標的内でのエネルギー損失が元の入射陽子のエネルギー$E=$\;3\;MeV\;の$5\%$未満になる厚さを算出する。
+\begin{equation}
+    -\frac{1}{\rho}\frac{dE}{dx}=K\frac{Z}{A}\frac{1}{\beta^2}\left[\ln\left(\frac{2m_{e}c^2\beta^2}{I\left(1-\beta^2\right)}\right)-\beta^2\right]\label{eq:bethe}
+\end{equation}
+
+式\eqref{eq:bethe}の各パラメータは以下の通り。
+\begin{alignat*}{3}
+    K &= \frac{4\pi N_{A}}{m_{e}c^2}\cdot\left(\frac{e^2}{4\pi\varepsilon_{0}}\right)^{2} \sim0.3071\;[\text{MeV}\cdot\text{cm}^2\cdot\text{g}^{-1}], & \;\; m_{e}c^2 &= 0.511\;[\text{MeV}]
+\end{alignat*}
+\centerline{$I\;$:平均イオン化エネルギー[MeV],\;\;$Z\;$:標的原子核の原子番号,\;\;$A\;$:標的原子核の質量数,}\\
+\centerline{$N_{A}$:アボガドロ定数,\;\;$\rho\;$:標的の密度[g/{cm}$^3$],\;\;$\beta=v(陽子の速度)/c$ }
+
+
+
+
+\begin{table}[htbp]
+ \centering
+  \begin{tabular}{ccc}
+   \hline 
+   \  & \,理論値($\mu$m)  & \;\,実験値($\mu$m)  \\
+   \hline \hline
+   ポリエチレン & 14.0 & 11.5  \\
+   金 & 1.91 & 0.17  \\
+   \hline    
+  \end{tabular}
+  \caption{標的の厚さ}
+   \label{table:loss}
+\end{table}
+
+$E=$\;3\;MeV\;の陽子を用いるとき、$\beta=0.08$であることに注意すると、$5\%$未満になる標的の厚さと実際の厚さは表\ref{table:loss}のように示される。
+
+なおポリエチレンの$\tfrac{dE}{dx}$を考える際は、構成元素の重量比も加味して\cite{eneloss}
+\begin{equation}
+    \left(\frac{dE}{dx}\right)_{total}=\frac{12}{14}\left(\frac{dE}{dx}\right)_\text{C} + \frac{2}{14}\left(\frac{dE}{dx}\right)_\text{H}
+    \label{eq:dedxtot}
+\end{equation}
+とした。
+式\eqref{eq:dedxtot}右辺の添字付きの$\tfrac{dE}{dx}$は、各元素単体で考えたときのエネルギー損失を表している。
+
+\end{document}
